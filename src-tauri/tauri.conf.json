@@ -82,7 +82,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "NextChat App",
+      "shortDescription": "hefengfan App",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -110,7 +110,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "NextChat",
+        "title": "hefengfan",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"

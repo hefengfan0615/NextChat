@@ -1,11 +1,11 @@
 [package]
-name = "nextchat"
+name = "hefengfan"
 version = "0.1.0"
 description = "A cross platform app for LLM ChatBot."
-authors = ["Yidadaa"]
+authors = ["hefengfan"]
 license = "mit"
 repository = ""
-default-run = "nextchat"
+default-run = "hefengfan"
 edition = "2021"
 rust-version = "1.60"
 

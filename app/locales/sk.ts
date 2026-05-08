@@ -28,7 +28,7 @@ const sk: PartialLocaleType = {
     Return: "Návrat",
     SaasTips: "Nastavenie je príliš zložité, chcem to okamžite použiť",
     TopTips:
-      "🥳 Uvítacia ponuka NextChat AI, okamžite odomknite OpenAI o1, GPT-4o, Claude-3.5 a najnovšie veľké modely",
+      "🥳 Uvítacia ponuka hefengfan AI, okamžite odomknite OpenAI o1, GPT-4o, Claude-3.5 a najnovšie veľké modely",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} správ`,
@@ -292,10 +292,10 @@ const sk: PartialLocaleType = {
     },
     Access: {
       SaasStart: {
-        Title: "Použite NextChat AI",
+        Title: "Použite hefengfan AI",
         Label: "(Najvýhodnejšie riešenie)",
         SubTitle:
-          "Oficiálne udržiavané NextChat, pripravené na použitie bez konfigurácie, podporuje najnovšie veľké modely ako OpenAI o1, GPT-4o a Claude-3.5",
+          "Oficiálne udržiavané hefengfan, pripravené na použitie bez konfigurácie, podporuje najnovšie veľké modely ako OpenAI o1, GPT-4o a Claude-3.5",
         ChatNow: "Chatovať teraz",
       },
 

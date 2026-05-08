@@ -27,7 +27,7 @@ const bn: PartialLocaleType = {
     Return: "ফিরে আসা",
     SaasTips: "কনফিগারেশন খুব কঠিন, আমি অবিলম্বে ব্যবহার করতে চাই",
     TopTips:
-      "🥳 NextChat AI প্রথম প্রকাশের অফার, এখনই OpenAI o1, GPT-4o, Claude-3.5 এবং সর্বশেষ বড় মডেলগুলি আনলক করুন",
+      "🥳 hefengfan AI প্রথম প্রকাশের অফার, এখনই OpenAI o1, GPT-4o, Claude-3.5 এবং সর্বশেষ বড় মডেলগুলি আনলক করুন",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} টি চ্যাট`,
@@ -295,10 +295,10 @@ const bn: PartialLocaleType = {
 
     Access: {
       SaasStart: {
-        Title: "NextChat AI ব্যবহার করুন",
+        Title: "hefengfan AI ব্যবহার করুন",
         Label: "(সেরা মূল্যসাশ্রয়ী সমাধান)",
         SubTitle:
-          "NextChat কর্তৃক অফিসিয়াল রক্ষণাবেক্ষণ, শূন্য কনফিগারেশন ব্যবহার শুরু করুন, OpenAI o1, GPT-4o, Claude-3.5 সহ সর্বশেষ বড় মডেলগুলি সমর্থন করে",
+          "hefengfan কর্তৃক অফিসিয়াল রক্ষণাবেক্ষণ, শূন্য কনফিগারেশন ব্যবহার শুরু করুন, OpenAI o1, GPT-4o, Claude-3.5 সহ সর্বশেষ বড় মডেলগুলি সমর্থন করে",
         ChatNow: "এখনই চ্যাট করুন",
       },
 

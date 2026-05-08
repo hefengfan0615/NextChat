@@ -28,7 +28,7 @@ const it: PartialLocaleType = {
     SaasTips:
       "La configurazione è troppo complicata, voglio usarlo immediatamente",
     TopTips:
-      "🥳 Offerta di lancio NextChat AI, sblocca OpenAI o1, GPT-4o, Claude-3.5 e i più recenti modelli di grandi dimensioni",
+      "🥳 Offerta di lancio hefengfan AI, sblocca OpenAI o1, GPT-4o, Claude-3.5 e i più recenti modelli di grandi dimensioni",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} conversazioni`,
@@ -307,10 +307,10 @@ const it: PartialLocaleType = {
 
     Access: {
       SaasStart: {
-        Title: "Usa NextChat AI",
+        Title: "Usa hefengfan AI",
         Label: "(La soluzione più conveniente)",
         SubTitle:
-          "Mantenuto ufficialmente da NextChat, pronto all'uso senza configurazione, supporta i modelli più recenti come OpenAI o1, GPT-4o e Claude-3.5",
+          "Mantenuto ufficialmente da hefengfan, pronto all'uso senza configurazione, supporta i modelli più recenti come OpenAI o1, GPT-4o e Claude-3.5",
         ChatNow: "Chatta ora",
       },
 
