@@ -1,0 +1,14 @@
+name = "ai-proxy-worker"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# 如果需要使用 KV 存储配置，取消注释以下内容
+# [[kv_namespaces]]
+# binding = "AI_PROXY_CONFIG"
+# id = "your-kv-namespace-id"
+
+# 如果需要使用环境变量（在 Cloudflare Dashboard 设置），取消注释以下内容
+# 格式：VARIABLE_NAME = "默认值"
+# OPENAI_API_KEY = ""
+# ANTHROPIC_API_KEY = ""
+# BASE_URL = ""
