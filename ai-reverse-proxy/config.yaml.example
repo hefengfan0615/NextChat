@@ -1,0 +1,156 @@
+proxy:
+  port: "8080"
+  host: "0.0.0.0"
+  read_timeout: 30
+  write_timeout: 60
+  
+  providers:
+    openai:
+      name: "OpenAI"
+      base_url: "https://api.openai.com"
+      api_key_env: "OPENAI_API_KEY"
+      timeout: 30
+      weight: 10
+      enabled: true
+      regions:
+        - "INTL"
+        - "CN"
+      capabilities:
+        - "chat"
+        - "completions"
+        - "embeddings"
+    
+    anthropic:
+      name: "Anthropic Claude"
+      base_url: "https://api.anthropic.com"
+      api_key_env: "ANTHROPIC_API_KEY"
+      timeout: 30
+      weight: 8
+      enabled: true
+      regions:
+        - "INTL"
+        - "CN"
+      capabilities:
+        - "chat"
+        - "messages"
+    
+    deepseek:
+      name: "DeepSeek"
+      base_url: "https://api.deepseek.com"
+      api_key_env: "DEEPSEEK_API_KEY"
+      timeout: 30
+      weight: 9
+      enabled: true
+      regions:
+        - "CN"
+        - "INTL"
+      capabilities:
+        - "chat"
+        - "completions"
+    
+    google:
+      name: "Google Gemini"
+      base_url: "https://generativelanguage.googleapis.com"
+      api_key_env: "GOOGLE_API_KEY"
+      timeout: 30
+      weight: 7
+      enabled: true
+      regions:
+        - "INTL"
+      capabilities:
+        - "chat"
+        - "embeddings"
+    
+    moonshot:
+      name: "Moonshot AI"
+      base_url: "https://api.moonshot.cn"
+      api_key_env: "MOONSHOT_API_KEY"
+      timeout: 30
+      weight: 8
+      enabled: true
+      regions:
+        - "CN"
+      capabilities:
+        - "chat"
+        - "completions"
+    
+    qwen:
+      name: "Alibaba Qwen"
+      base_url: "https://dashscope.aliyuncs.com"
+      api_key_env: "DASHSCOPE_API_KEY"
+      timeout: 30
+      weight: 8
+      enabled: true
+      regions:
+        - "CN"
+      capabilities:
+        - "chat"
+        - "completions"
+    
+    doubao:
+      name: "ByteDance Doubao"
+      base_url: "https://ark.cn-beijing.volces.com"
+      api_key_env: "DOUBAO_API_KEY"
+      timeout: 30
+      weight: 7
+      enabled: true
+      regions:
+        - "CN"
+      capabilities:
+        - "chat"
+        - "completions"
+  
+  rules:
+    - path_prefix: "/v1/chat/completions"
+      provider: "deepseek"
+      load_balance: "weighted"
+      regions:
+        - "CN"
+        - "*"
+      priority: 10
+    
+    - path_prefix: "/v1/chat/completions"
+      provider: "openai"
+      load_balance: "weighted"
+      regions:
+        - "INTL"
+      priority: 10
+    
+    - path_prefix: "/v1/completions"
+      provider: "openai"
+      load_balance: "leastlatency"
+      regions:
+        - "*"
+      priority: 5
+    
+    - path_prefix: "/v1/embeddings"
+      provider: "openai"
+      load_balance: "roundrobin"
+      regions:
+        - "*"
+      priority: 5
+    
+    - path_prefix: "/v1/messages"
+      provider: "anthropic"
+      load_balance: "weighted"
+      regions:
+        - "*"
+      priority: 8
+    
+    - path_prefix: "/v1/models"
+      provider: "openai"
+      load_balance: "roundrobin"
+      regions:
+        - "*"
+      priority: 1
+
+health:
+  enabled: true
+  check_interval: 30
+  timeout: 5
+  max_retries: 3
+
+log:
+  level: "info"
+  format: "json"
+  output_path: "logs/proxy.log"
