@@ -5,8 +5,7 @@
       "args": [
         "/workspace/mcp_stock_server/stock_server.py"
       ],
-      "env": {},
-      "status": "active"
+      "env": {}
     }
   }
 }
