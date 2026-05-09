@@ -2,7 +2,7 @@ FROM node:18-alpine AS base
 
 FROM base AS deps
 
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat python3 py3-pip
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN yarn install
 
 FROM base AS builder
 
-RUN apk update && apk add --no-cache git
+RUN apk update && apk add --no-cache git python3 py3-pip
 
 ENV OPENAI_API_KEY=""
 ENV GOOGLE_API_KEY=""
@@ -28,7 +28,9 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
-RUN apk add proxychains-ng
+RUN apk add proxychains-ng python3 py3-pip
+
+RUN pip3 install akshare mcp --quiet --break-system-packages
 
 ENV PROXY_URL=""
 ENV OPENAI_API_KEY=""
@@ -43,6 +45,9 @@ COPY --from=builder /app/.next/server ./.next/server
 
 RUN mkdir -p /app/app/mcp && chmod 777 /app/app/mcp
 COPY --from=builder /app/app/mcp/mcp_config.default.json /app/app/mcp/mcp_config.json
+
+RUN mkdir -p /app/mcp_stock_server && chmod 777 /app/mcp_stock_server
+COPY --from=builder /app/mcp_stock_server/stock_server.py /app/mcp_stock_server/
 
 EXPOSE 3000
 
